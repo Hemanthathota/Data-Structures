@@ -1,6 +1,14 @@
 # Data-Structures
-My Algo and DS course assignments and stuff with solutions at IIT Madras  in my sophomore year
 
+
+DS and ALGO course CS2300
+
+@INDIAN INSTITUTE OF TECHNOLOGY MADRAS
+
+In my sophomore year....!!!!
 
 //When I wrote this, only God and I understood what I was doing
+
+:P
+
 //Now, God only knows
