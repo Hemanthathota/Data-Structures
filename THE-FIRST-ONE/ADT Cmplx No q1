@@ -1,0 +1,29 @@
+/*
+1. Implement Abstract Data Type(ADT) Complex Number and associated operations
+on them.
+Implement following operations on complex numbers.
+(a) Addition of two Complex Numbers
+(b) Subtraction of two Complex Numbers
+(c) Multiplication of two Complex Numbers
+(d) division of two Complex Numbers
+(e) Modulus/Magnitude/Absolute value of a Complex Number
+Note: Write separate functions for each operation. Function corresponding to Modulus operation
+must return a floating point value precise upto 6 digits after decimal and functions
+corresponding to rest of the operations must return a Complex Number. Upon execution,
+your program must present the user with an options-menu with option numbers (starting
+from 1) for each of the operations and a sentinel-value (-1 or 0) to terminate the program.
+Your program must prompt the user to enter two complex numbers, one in each line, followed
+by the choice of operation and repeat this until user decides to terminate the program.
+ex
+Addition:
+1
+Subtraction: 2
+Multiplication: 3
+Division: 4
+Modulus: 5
+Input:
+0 1
+2 3
+1
+Output: 2 + 4i
+*/
