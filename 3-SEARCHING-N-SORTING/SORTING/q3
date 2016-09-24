@@ -1,0 +1,13 @@
+Use all the sorting algorithms implemented in Question 2 to complete this
+Input:
+t, number of test-inputs
+n, size of the array
+n unsorted array elements elements n sorted array elements in ascending order n sorted array elements in descending order
+
+Expected Output:
+For every test-input, write 4 space separated values to files named as out3_bubble.txt, out3_insertion.txt
+and so on, for each algorithm run on all three arrays. First of 4 values must be the array size and next three
+being the times(microseconds) taken by the algorithms to run on the three arrays in the specified order.
+
+Note:
+Script will be provided to plot the graphs
