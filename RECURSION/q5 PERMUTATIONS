@@ -1,0 +1,7 @@
+Implement permutations of a set of integers.
+
+Input :
+n(<=9), the number of integers
+The integers, each in a separate line (Assume the integers are no more than 3 digits in size)
+Output:
+Every possible permutation of the n integers (n! in number)
