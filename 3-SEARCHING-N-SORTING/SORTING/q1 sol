@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+/*COUNTING SORT*/
+
+int main()
+{
+    int n, i, j, k;
+    scanf("%d %d", &n, &k);
+    int arr[n], b[n];
+    for(i=1;i<=n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    int count[k];
+    /*initiailze all elements to 0*/
+    for( i=0; i<=k; i++)   count[i]=0;
+
+    /*counting number of times each element is repeated */
+    for( i=1; i<=n; i++)    count[arr[i]]++;
+    
+    for( i=1; i<=k; i++)   count[i]=count[i]+count[i-1];
+    /*storing the count value into another array*/
+
+    for( j=n; j>=1; j--)
+    {
+        b[count[arr[j]]] = arr[j];						//saving values to the final sorted array to print it
+        count[arr[j]] = count[arr[j]]-1;
+    }
+
+    for(i=1;i<=n;i++)   printf("%d ",b[i]);    //printing the array
+    printf("\n");
+    return 0;
+}
