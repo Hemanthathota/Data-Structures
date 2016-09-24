@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <sys/time.h>
+#include "q2_sort.h"
+
+void print(int arr[], int n)
+{
+    int i;
+    for(i=0;i<n;i++)    printf("%d ",arr[i]);
+	printf("\n");
+}
+
+int main()
+{
+	int t, i;
+	scanf("%d",&t);
+	FILE *fp= fopen("out2.txt","w");
+	for(i=0;i<t;i++)           //for test cases
+	{
+		int n, j;
+		scanf("%d",&n);
+		int arr1[n], arr2[n], arr3[n], arr4[n], arr5[n];
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&arr1[j]);
+			arr2[j]=arr1[j];
+			arr3[j]=arr1[j];					//ALL ARRAYS ARE THE SAME COPIED 
+			arr4[j]=arr1[j];					//TO Run INTO DIFF FUNCTIONS
+			arr5[j]=arr1[j];
+		}
+
+		fprintf(fp, "%d ",n);
+		/*selectionsort*/
+		struct timeval t1,t2;
+		gettimeofday(&t1, NULL);
+		selection_sort( arr1, n);									//time function
+		gettimeofday(&t2, NULL);
+		double timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp, "%lf ",timetaken);
+
+		print( arr1, n);
+
+
+		/*bubble sort*/
+		gettimeofday(&t1, NULL);
+		bubble_sort( arr2, n);										//time function
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp, "%lf ",timetaken);
+
+		print( arr2, n);
+
+
+		/*insertion sort*/
+		gettimeofday(&t1, NULL);
+		insertion_sort( arr3, n);									//time function
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp, "%lf ",timetaken);
+
+		print( arr3, n);
+
+
+		/*merge sort*/
+		gettimeofday(&t1, NULL);
+		merge_sort( arr4, 0, n-1);									//time function
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp, "%lf ",timetaken);
+
+		print( arr4, n);
+
+		
+		/*quick sort*/
+		gettimeofday(&t1, NULL);
+		quick_sort( arr5, 0, n-1);									//time function
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp, "%lf ",timetaken);
+
+		print( arr5, n);
+
+
+		fprintf(fp, "\n");
+
+	}
+	fclose(fp);    //CLOSING THE FILE
+	return 0;
+}
