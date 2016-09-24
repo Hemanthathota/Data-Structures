@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <math.h>
+
+long int k;
+
+long int Det(int n,long int arr[][n])
+{
+    int i, j, a, b, p;
+    long int temp[n-1][n-1];
+    if(n==1)
+    {
+        k = arr[0][0];
+        return k;
+    }
+    else if(n==2){
+        k = ((arr[0][0]*arr[1][1]) - (arr[0][1]*arr[1][0]));
+        return k;
+    }
+    else
+    {
+        k = 0;
+
+        for( p=0 ; p<n ; p++)
+        {
+            for( a=1, i=0 ; a<n ; a++)
+            {
+                for( b=0,j=0 ; b<n ; b++)
+                {
+                    if (b == p)
+                    {
+                        continue;
+                    }
+                    temp[i][j] = arr[a][b];
+                    j++;
+                }
+                i++;
+            }
+
+            k = k + (arr[0][p]*pow(-1,p)*Det( n-1 , temp ));
+        }
+    }
+    return k;
+}
+
+int main(void)
+{
+	int n, i, j;
+    scanf("%d",&n);
+    int arr[n][n];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%li",&arr[i][j]);
+        }
+    }
+    long int k;
+    k = Det( n, arr );
+    printf("%li",k);
+	return 0;
+}
