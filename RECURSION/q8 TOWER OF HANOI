@@ -1,0 +1,31 @@
+Solve the Towers of Hanoi puzzle. There are three pegs, say A, B and C. The peg A has n disks (each of different size)
+attached to it. The disks are arranged in decreasing order of size, with the smallest on top.
+The objective is to move these disks to the peg C, while following the given rules:
+
+Only one disk can be moved at a time
+
+Only the topmost disk of a peg can be moved
+
+A moved disk can be placed only on the top of the disks on any peg
+
+No disk can be placed above a disk smaller than itself
+
+Input Description : A singleline containing an integer,n, the number of disks at A before the game starts.
+
+Expected output
+As many number of lines as the number of possible movements of disks between all pairs
+of pegs until all of them are moved to C with each line containing output in the following format, followed
+by a line containing the number of movements
+"source_peg -> dest_peg disks_at_A disks_at_B disks_at_C"
+Ex:
+Input:
+3
+Output:
+A -> C 2 0 1
+A -> B 1 1 1
+C -> B 1 2 0
+A -> C 0 2 1
+B -> A 1 1 1
+B -> C 1 0 2
+A -> C 0 0 3
+7
