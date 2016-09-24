@@ -1,16 +1,14 @@
 /*
 Given  an  integer  as  input,  convert  it  to  its  Hexadecimal  equivalent.   You  can  assume
-that 1
-
-n
-
-10
-9
+that 1<n<10^9
 where n is the given decimal number
+
 Input Description:
 A single line containing an integer
+
 Expected Output:
 a single line containing the Hexadecimal equivalent of the input integer
+
 ex-
 
 Input:
