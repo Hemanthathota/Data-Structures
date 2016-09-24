@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+int arr[9],N;
+void permute(int n,int* a)
+{
+	int temp[n-1],i,j,p;
+	if(n==1)
+	{
+		arr[N-1]=a[0];
+		for(p=0;p<N;p++)  
+			{
+				printf("%d",arr[p]);
+			}
+		printf(" ");
+		return ;
+	}
+	for(i=0;i<n;i++)
+	{	
+		int k=0;
+		arr[N-n]=a[i];
+		for(j=0;j<n;j++)
+		{
+			if(i==j)
+				continue;
+			temp[k]=a[j];
+			k++;
+		}
+		permute(n-1, temp);
+		
+	}
+}
+
+int main()
+{
+	int n,i;
+	scanf("%d",&N);
+	int a[N];
+	for(i=0;i<N;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	permute(N, a);
+	return 0;	
+}
