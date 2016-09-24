@@ -1,5 +1,6 @@
-Solve the
-N - Queens problem. You are expected to place N queens on an NN chess board such that none of the queens can attack the
+Solve the N - Queens problem. 
+
+You are expected to place N queens on an NN chess board such that none of the queens can attack the
 others i.e. they do not share the same row, column or diagonal.
 Assume the chess board to be a grid with rows and columns both going from 0 to N - 1
 
