@@ -29,3 +29,8 @@ B -> A 1 1 1
 B -> C 1 0 2
 A -> C 0 0 3
 7
+
+
+Note:
+As a matter of curiosity, you can also attempt this problem with more pegs, and think about how
+to approach this with an arbitrary number of pegs. This is not for evaluation, at least not within this deadline
