@@ -1,15 +1,12 @@
 /*
 Implement a function to calculate the square root of an integer precisely upto 15 digits
-after decimal point (
-Note
-:  You are not supposed to use any library function to calculate
-the square root violating which will result in 0 for this question).  You can assume that 1
-
-n
-
-10
-4
+after decimal point
+Note:
+You are not supposed to use any library function to calculate
+the square root violating which will result in 0 for this question.  
+You can assume that 1<n<10
 where n is the input number
+
 Input Description:
 A single line containing an integer
 Expected Output:
