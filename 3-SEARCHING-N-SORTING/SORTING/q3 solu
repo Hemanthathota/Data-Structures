@@ -1,0 +1,191 @@
+#include <stdio.h>
+#include <sys/time.h>
+#include "q2_sort.h"
+int main()
+{
+	int t, i;
+	scanf("%d",&t);
+	FILE *fp1= fopen("out3_selection.txt","w");
+	FILE *fp2= fopen("out3_bubble.txt","w");
+	FILE *fp3= fopen("out3_insertion.txt","w");
+	FILE *fp4= fopen("out3_merge.txt","w");
+	FILE *fp5= fopen("out3_quick.txt","w");
+	for(i=0; i<t ; i++)
+	{
+		int n, j;
+		scanf("%d",&n);
+
+/*FIFTEEN ARRAYS DEFINED TO PERFORM FUNCTIONS
+	ON EACH OF THEM SEPARATELY WITH ALL 3 KINDS OF ARRAYS*/
+
+
+
+
+		int arr1[n], arr2[n], arr3[n], arr4[n], arr5[n];
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&arr1[j]);
+			arr2[j]=arr1[j];
+			arr3[j]=arr1[j];
+			arr4[j]=arr1[j];
+			arr5[j]=arr1[j];
+		}
+
+		int arr1a[n], arr2a[n], arr3a[n], arr4a[n], arr5a[n];
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&arr1a[j]);
+			arr2a[j]=arr1a[j];
+			arr3a[j]=arr1a[j];
+			arr4a[j]=arr1a[j];
+			arr5a[j]=arr1a[j];
+		}
+
+		int arr1d[n], arr2d[n], arr3d[n], arr4d[n], arr5d[n];
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&arr1d[j]);
+			arr2d[j]=arr1d[j];
+			arr3d[j]=arr1d[j];
+			arr4d[j]=arr1d[j];
+			arr5d[j]=arr1d[j];
+		}
+
+	
+		struct timeval t1,t2;
+		fprintf(fp1, "%d ",n);
+
+		/*selectionsrt*/
+		gettimeofday(&t1, NULL);
+		selection_sort( arr1, n);
+		gettimeofday(&t2, NULL);
+		double timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp1, "%lf ",timetaken);
+
+		/*selectionsrt ascending*/
+		gettimeofday(&t1, NULL);
+		selection_sort( arr1a, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp1, "%lf ",timetaken);
+
+		/*selectionsrt descending*/
+		gettimeofday(&t1, NULL);
+		selection_sort( arr1d, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp1, "%lf ",timetaken);
+
+		fprintf(fp1, "\n");
+
+
+		fprintf(fp2, "%d ",n);
+
+		/*bubble sort*/
+		gettimeofday(&t1, NULL);
+		bubble_sort( arr2, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp2, "%lf ",timetaken);
+
+		/*bubble sort ascending*/
+		gettimeofday(&t1, NULL);
+		bubble_sort( arr2a, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp2, "%lf ",timetaken);
+
+		/*bubble sort descending*/
+		gettimeofday(&t1, NULL);
+		bubble_sort( arr2d, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp2, "%lf ",timetaken);
+
+		fprintf(fp2, "\n");
+
+
+		fprintf(fp3, "%d ",n);
+
+		/*insertion sort*/
+		gettimeofday(&t1, NULL);
+		insertion_sort( arr3, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp3, "%lf ",timetaken);
+
+		/*insertion sort ascending*/
+		gettimeofday(&t1, NULL);
+		insertion_sort( arr3a, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp3, "%lf ",timetaken);
+
+		/*insertion sort desending*/
+		gettimeofday(&t1, NULL);
+		insertion_sort( arr3d, n);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp3, "%lf ",timetaken);
+
+		fprintf(fp3, "\n");
+
+
+		fprintf(fp4, "%d ",n);
+
+		/*merge sort*/
+		gettimeofday(&t1, NULL);
+		merge_sort( arr4, 0, n-1);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp4, "%lf ",timetaken);
+
+		/*merge sort ascending*/
+		gettimeofday(&t1, NULL);
+		merge_sort( arr4a, 0, n-1);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp4, "%lf ",timetaken);
+
+		/*merge sort descending*/
+		gettimeofday(&t1, NULL);
+		merge_sort( arr4d, 0, n-1);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp4, "%lf ",timetaken);
+
+		fprintf(fp4, "\n");
+
+
+		fprintf(fp5, "%d ",n);
+
+		/*quick sort*/
+		gettimeofday(&t1, NULL);
+		quick_sort( arr5, 0, n-1);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp5, "%lf ",timetaken);
+
+		/*quick sort ascending*/
+		gettimeofday(&t1, NULL);
+		quick_sort( arr5, 0, n-1);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp5, "%lf ",timetaken);
+
+		/*quick sort*/
+		gettimeofday(&t1, NULL);
+		quick_sort( arr5, 0, n-1);
+		gettimeofday(&t2, NULL);
+		timetaken = (double)(t2.tv_usec - t1.tv_usec)+(t2.tv_sec - t1.tv_sec)*1000000;
+		fprintf(fp5, "%lf ",timetaken);
+
+		fprintf(fp5, "\n");
+	}
+	fclose(fp1);
+	fclose(fp2);
+	fclose(fp3);
+	fclose(fp4);
+	fclose(fp5);
+	return 0;
+}
