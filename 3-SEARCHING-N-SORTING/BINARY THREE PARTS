@@ -1,0 +1,13 @@
+Implement Binary Search in the following three ways, where the array is partitioned as:
+1.  1/2 and 1/2
+2.  1/3 and 2/3
+3.  Three parts of 1/3 size each
+Input
+n, the number of elements in the array
+The n array elements k, the key to be searched
+
+Output :
+
+The position (array index) of the key in the array, if the key is present;  or print -1 to indicate the key is
+absent in the array
+The number of comparisons to be made for each of these three cases, comma separated
