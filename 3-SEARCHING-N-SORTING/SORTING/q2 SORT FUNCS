@@ -1,0 +1,155 @@
+#include <stdio.h>
+
+/*SWAP FUNC*/
+
+void swap(int* a, int* b)
+{
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+
+/*SELEC SORT*/
+
+void selection_sort(int arr[], int n)
+{
+    int i,j;
+    for(j=0;j<n-1;j++)
+    {
+        int min;
+        min=j;
+        for(i=j+1;i<n;i++)					//LOOP UNTIL to GET min LESS than ASSUMED MIN
+        {
+            if(arr[i]<arr[min])
+            {
+                min=i;					//MIN REASSIGNED 
+            }
+        }
+        swap( &arr[j], &arr[min]);		//SWAPPING POSITION OF THE MIN WITH CURRENT
+    }
+}
+
+/*BUBBLE SORT*/
+
+void bubble_sort(int arr[], int n)
+{
+    int i, j;
+    for(j=0;j<n-1;j++)
+    {
+        for(i=0;i<n-1-j;i++)			//SWAPPING FOR ALL
+        {
+            if(arr[i]>arr[i+1])				//SWAPPING TILL THE END
+            {
+                swap(&arr[i], &arr[i+1]);    //SWAPPNG
+            }
+        }
+    }
+}
+
+/*INSERTION SORT*/
+
+void insertion_sort(int arr[], int n)
+{
+    int i, j, temp;
+    for(i=1;i<n;i++)
+    {
+			
+		//INSERTING THE REQUIRED ELEMENT IN THE SORTED SUB ARRAY
+        temp=arr[i];
+        for(j=i;(j>0)&&(arr[j-1]>temp); j--)
+        {
+            arr[j]=arr[j-1];
+        }
+        arr[j]=temp;
+    }
+}
+
+/*MERGE SORT*/
+
+void merge(int arr[], int l, int m, int r)
+{
+    int i, j, k;
+    int n1, n2;
+    n1 = m-l+1;
+    n2 = r-m;
+    /* creating temp arrays */
+    int L[n1], R[n2];
+    for (i=0; i<n1; i++)  L[i]=arr[l+i];
+    for (j=0; j<n2; j++)  R[j]=arr[m+1+j];
+    /* Merge the temp arrays back into arr[l..r]*/
+    for (i=0,j=0,k=l ; i<n1 && j<n2; k++)
+    {
+        if(L[i]<=R[j])
+        {
+            arr[k]=L[i];
+            i++;
+        }
+        else
+        {
+            arr[k]=R[j];
+            j++;
+        }
+    }
+    /* Copy the remaining elements of L[], if there
+       are any */
+    for(; i<n1; i++, k++)
+    {
+        arr[k]=L[i];
+    }
+    for(; j<n2; j++, k++)
+    {
+        arr[k]=R[j];
+    }
+}
+
+void merge_sort(int arr[], int l, int r)
+{
+    if (l<r)
+    {
+        int m;
+        m = l+(r-l)/2;
+        /*Sort first and second halves*/
+        merge_sort( arr, l, m);
+        merge_sort( arr, m+1, r);
+        /* recompose the arrays*/
+        merge( arr, l, m, r);
+    }
+}
+
+/*QUICK SORT*/
+
+int partition (int arr[], int left, int right)
+{
+    int pivot = arr[right];
+    /*right end is the pivot*/
+    int i, j;
+    i= left-1;
+    /* Index of smaller element*/
+    for (j=left; j<=right-1; j++)
+    {
+        /* If current element is smaller than or equal to pivot*/
+        if(arr[j]<=pivot)
+        {
+            i++;    // increment index of smaller element
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i+1], &arr[right]);
+    return (i+1);
+}
+
+void quick_sort(int arr[], int left, int right)
+{
+    if(left>right)
+        return ;
+    if(left<right)
+    {
+        /* pi is partitioning index, arr[p] is now at right place */
+        int pindex = partition(arr, left, right);
+        /* Separately sort elements before making a partition and after partition*/
+        quick_sort(arr, left, pindex-1);
+        quick_sort(arr, pindex+1, right);
+    }
+}
+
