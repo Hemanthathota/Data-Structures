@@ -1,0 +1,20 @@
+Implement the Fibonacci Sequence both iteratively and recursively.  Create separate functions for finding the nth
+Fibonacci number by iteration and recursion.  Also calculate the time taken in each, and plot a graph.
+
+Note:  Assume F1=F2= 1.
+
+Input:
+n, the number of starting elements of the Fibonacci sequence to be printed
+Output:
+The  rest n elements of the sequence, space separated.  The iterative and recursive versions should both be
+printed on a separate line.
+Calculate the time taken by each function for values 1 to 20.  You will have to use the library "time.h" for
+this.  Here's a handy primer.
+
+Print  the  time  taken  for  the  iterative  and  recursive  cases  in  a  separate   le  titled  "output.csv".   This   le
+should contain 20 lines, each containing the time for iterative and recursive executions for that particular
+number, separated only by a single comma.  A line in this  le is expected to look like this:
+0.000001,0.000002
+
+Download the Python snippet given in moodle; place it in the same directory as the output  le, and then
+run it by using "python plot.py"
