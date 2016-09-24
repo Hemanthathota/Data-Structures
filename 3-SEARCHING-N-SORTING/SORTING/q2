@@ -1,0 +1,19 @@
+Implement the following sorting algorithms:
+(a) Selection Sort
+(b) Bubble Sort
+(c) Insertion Sort
+(d) Merge Sort
+(e) Quick Sort
+implement all the algorithms in a single file called q2_sort.c and use them for both Question 2 and Question3.
+Input
+t number of test cases n, number of elements in the array
+The n array elements
+
+Expected Output:
+For each test-input there will be 5 output lines and each containing the array elements sorted in ascending
+order by each of the algorithms in sequence from a to e. For every test-input write the six space separated
+values per line to a file named out2.txt with the first being the array size and rest being the times(in microsecond)
+taken by each of the algorithms, in the above mentioned sequence, to sort the array.
+Note:
+Finally generate a single plot showing the "array-size vs Sorting-time" graph for all five algorithms.
+Script will be provided to complete this part.
