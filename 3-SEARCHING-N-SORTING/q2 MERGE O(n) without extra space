@@ -1,0 +1,9 @@
+Merge two sorted arrays without using additional space.
+Input :
+n, number of elements in  rst array
+The n array elements m , number of elements in the second array
+The m array elements
+
+Output:
+Two  merged  arrays  such  that  the  initial  numbers  (after  complete  sorting)  are  in  the   rst  array  and  the
+remaining numbers are in the second array (extra space allowed is O(1))
