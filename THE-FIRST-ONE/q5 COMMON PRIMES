@@ -1,0 +1,16 @@
+/*
+Determine the common prime-factors of two positive integers.
+Input Description:
+A single line containing two space-separated integers
+Expected Output:
+A single line containing space-separated common prime factors of the
+two integers
+1
+ex
+
+Input:
+36 54
+
+Output:
+2 3
+*/
